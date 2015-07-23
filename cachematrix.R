@@ -24,7 +24,7 @@ makeCacheMatrix <- function(x = matrix()) {
   getMatrix <- function() x
   
   ## Setter of Inversed Matrix
-  setInversedMatrix <- function( solve ) inversedMatrix <<- solve
+  setInversedMatrix <- function( alreadyInversedMatrix ) inversedMatrix <<- alreadyInversedMatrix
   
   ## Getter of Inversed Matrix
   getInversedMatrix <- function() inversedMatrix
@@ -47,7 +47,7 @@ cacheSolve <- function(x, ...) {
   ## Get a matrix that is already inverted.
   inversedMatrix <- x$getInversedMatrix()
   
-  ## Since value is already cached, it returns
+  ## If value is already cached, it returns
   ## the data from cache.
   if(!is.null(inversedMatrix)){
     message("getting cached data")
